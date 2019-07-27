@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+int pair_4(int arr[],int n)
+{
+    int f[4]={0,0,0,0};
+    for(int i=0;i<n;i++)
+    {
+        int remainder=arr[i]%4;
+        f[remainder]++;
+    }
+    // for(int i=0;i<4;i++)
+    // cout<<f[i]<<" ";
+    // cout<<"\n";
+    int r=0;
+    r=(f[0]*(f[0]-1))/2+(f[2]*(f[2]-1))/2+(f[1]*f[3]);
+    
+    return r;
+    
+    
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t>0)
+	{
+	    int n;
+	    cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++)
+	    cin>>arr[i];
+	    cout<<pair_4(arr,n)<<"\n";
+	    t--;
+	}
+	return 0;
+}
