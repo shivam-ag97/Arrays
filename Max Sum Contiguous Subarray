@@ -1,0 +1,21 @@
+int Solution::maxSubArray(const vector<int> &A) {
+int max_ending_here=A[0];
+int current_max=A[0];
+int n=A.size();
+for(int i=1;i<n;i++)
+{
+    if(A[i]>max_ending_here+A[i])
+    {
+        max_ending_here=A[i];
+    }
+    else
+    {
+        max_ending_here+=A[i];
+    }
+    if(current_max<max_ending_here)
+    {
+        current_max=max_ending_here;
+    }
+}
+return current_max;
+}
